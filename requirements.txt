@@ -1,0 +1,6 @@
+Django
+South
+django-annoying
+MySQL-python
+PIL
+django-grappelli
