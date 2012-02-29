@@ -1,0 +1,10 @@
+*.pyc
+*.pyo
+*~
+foto.bd
+local_settings.py
+*.gif
+libs
+kesh
+ENV
+*.dat
