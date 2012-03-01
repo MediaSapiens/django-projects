@@ -1,0 +1,155 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/mediaelementplayer.css"> 
+  <!-- end CSS-->
+
+  <script src="/static/js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+<body>
+
+<div id="container">
+    <header>
+        <a class="logo" href="#"></a>        
+             <span>This project name</span>
+             <nav>
+                <a href="#" class="first" rel="porfolio">portfolio</a>
+                <a href="#" rel="about">ABOUT</a>
+                <a href="#" rel="contact">Contact</a>
+                <a href="#">Studio</a> 
+                <a href="#">backstage</a>
+             </nav>
+    </header>
+    <div class="contwr">
+
+   
+        <div id="slider1">
+	  {% for item in image %}
+	  <div class="data" data-type="{% if item.is_video %}video{% else %}img{% endif %}">
+	    <img src="{{ item.image.url }}"  width="885px" height="485px"/>
+	  </div>
+	  {% endfor %}
+           <div class="data" data-type="video">         
+                <video width="885" height="485" controls="controls" preload="none">
+                    <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
+                    <source type="video/mp4" src="media/echo-hereweare.mp4" />
+                    <!-- WebM/VP8 for Firefox4, Opera, and Chrome -->
+                    <source type="video/webm" src="media/echo-hereweare.webm" />
+                    <!-- Ogg/Vorbis for older Firefox and Opera versions -->
+                    <source type="video/ogg" src="media/echo-hereweare.ogv" />
+                         <!-- Flash fallback for non-HTML5 browsers without JavaScript -->
+                    <object width="320" height="240" type="application/x-shockwave-flash" data="flashmediaelement.swf">
+                        <param name="movie" value="flashmediaelement.swf" />
+                        <param name="flashvars" value="controls=true&file=echo-media/hereweare.mp4" />
+                        <!-- Image as a last resort -->
+                    </object>
+                </video>
+           </div>
+        </div>
+        
+           <div class="thumbs">
+	     {% for item in image %}
+             <a href="" data-type="{% if item.is_video %}video{% else %}img{% endif %}">
+	       <img src="{{ item.image.url }}" width="70" height="70" />
+	     </a>
+	     {% endfor %}
+              <a href="" data-type="video"><img src="/static/img/fake.jpg" width="70" height="70" /></a>
+            
+           </div>
+        <div class="controll">   
+            <a id="start" href=""></a>
+            <a id="stop" href=""  onclick="clearTimeout(timer)"></a>
+            <span>sort: <a href="#" id="img">images</a> or <a href="#" id="vid">video</a></span>
+            <span class="rght">All images are protected by copyright ©Matthias Schlief | <a href="#">Impressum</a></span>
+        </div>
+        <div class="hide_my about">
+            <div id="mcs3_container">
+            		<div class="customScrollBox">
+            			<div class="container">
+            				<div class="content">
+            					<h3>Adjustable scroller height with 1/3 range and greater easing, with mouse-wheel support</h3>
+            					<p>Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit. Nullam felis tellus, tristique nec egestas in, luctus sed diam. Suspendisse potenti. </p>
+            					<p>consectetur adipiscing elit. Nulla consectetur libero consectetur quam consequat nec tincidunt massa feugiat. Donec egestas mi turpis. Fusce adipiscing dui eu metus gravida vel facilisis ligula iaculis. Cras a rhoncus massa. Donec sed purus eget nunc placerat consequat. Nulla facilisi. Nam vel augue odio, dignissim mattis dolor. Nullam at mi aliquet quam interdum consectetur. Duis tempus mauris in lorem dictum eget euismod urna aliquet. In vestibulum tempor porta.</p>
+            					<p>Morbi porttitor rhoncus nisi, eget vehicula quam sodales at. Maecenas ipsum tellus, mollis quis faucibus id, feugiat molestie lacus. Sed nec quam purus, at condimentum quam. Integer imperdiet faucibus urna tempus consectetur. Nullam non purus ligula, et tincidunt nulla. Aenean tincidunt, dui at elementum egestas, sem turpis volutpat turpis, nec congue purus quam quis ligula. Nam dictum rutrum pulvinar. Aenean sed cursus purus. Curabitur non dui eu nibh fermentum interdum a id dui. Fusce iaculis blandit tellus, nec tincidunt massa adipiscing id. Aliquam dui massa, porttitor eget molestie at, semper eu libero. Suspendisse sit amet velit et elit viverra convallis vitae ut turpis. Maecenas vehicula blandit odio sollicitudin eleifend. Curabitur molestie porta neque ac imperdiet. Phasellus nec nisl non lectus pharetra porttitor sit amet tristique mi. Integer vehicula vestibulum sem vitae varius. Ut scelerisque semper posuere.</p>
+            					<p>Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit. Nullam felis tellus, tristique nec egestas in, luctus sed diam. Suspendisse potenti. Cras venenatis condimentum nibh a mollis. Duis id sapien nibh. Vivamus porttitor, felis quis blandit tincidunt, erat magna scelerisque urna, a faucibus erat nisl eget nisl. Aliquam consequat turpis id velit egestas a posuere orci semper. Mauris suscipit erat quis urna adipiscing ultricies. In hac habitasse platea dictumst. Nulla scelerisque lorem quis dui sagittis egestas. Etiam sed massa felis, aliquam pellentesque est. Quisque quis ante tortor, sed egestas risus. Maecenas varius adipiscing nulla, nec rhoncus est mattis id. Aenean blandit convallis nisi at fringilla. Nunc id massa eu sapien fringilla posuere.</p>
+            					<p>Nam eu arcu at purus tincidunt pharetra ultrices at ipsum. Mauris urna nunc, vulputate quis gravida in, pharetra id mauris. Ut sit amet mi dictum nulla lobortis adipiscing quis a nulla. Etiam diam ante, imperdiet vel scelerisque eget, venenatis non eros. Praesent ipsum sem, eleifend ut gravida eget, tristique id orci. Nam adipiscing, sem in mattis vulputate, risus libero adipiscing risus, eu molestie mi justo eget nulla. Cras venenatis metus et urna egestas non laoreet orci rutrum. Pellentesque ullamcorper dictum nisl a tincidunt. Quisque et lacus quam, sed hendrerit mi. Mauris pretium, sapien et malesuada pulvinar, lorem leo viverra leo, et egestas mi nisl quis odio. Aliquam erat volutpat. Sed urna arcu, tempus eu vulputate adipiscing, consectetur et orci. Vivamus congue, nunc vitae fringilla convallis, libero massa lacinia lorem, id convallis mauris elit ut leo. Nulla vel odio sem. Duis lorem urna, congue vitae rutrum sed, tincidunt vel tortor. In hac habitasse platea dictumst. Nunc vitae enim ante, vitae facilisis massa. Etiam sagittis sapien at nibh fermentum consectetur convallis lacus blandit.</p>
+            					<p>Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit. Nullam felis tellus, tristique nec egestas in, luctus sed diam. Suspendisse potenti. Cras venenatis condimentum nibh a mollis. Duis id sapien nibh. Vivamus porttitor, felis quis blandit tincidunt, erat magna scelerisque urna, a faucibus erat nisl eget nisl. Aliquam consequat turpis id velit egestas a posuere orci semper. Mauris suscipit erat quis urna adipiscing ultricies. In hac habitasse platea dictumst. Nulla scelerisque lorem quis dui sagittis egestas. Etiam sed massa felis, aliquam pellentesque est. Quisque quis ante tortor, sed egestas risus. Maecenas varius adipiscing nulla, nec rhoncus est mattis id. Aenean blandit convallis nisi at fringilla. Nunc id massa eu sapien fringilla posuere.</p>
+            					<p>Nam eu arcu at purus tincidunt pharetra ultrices at ipsum. Mauris urna nunc, vulputate quis gravida in, pharetra id mauris. Ut sit amet mi dictum nulla lobortis adipiscing quis a nulla. Etiam diam ante, imperdiet vel scelerisque eget, venenatis non eros. Praesent ipsum sem, eleifend ut gravida eget, tristique id orci. Nam adipiscing, sem in mattis vulputate, risus libero adipiscing risus, eu molestie mi justo eget nulla. Cras venenatis metus et urna egestas non laoreet orci rutrum. Pellentesque ullamcorper dictum nisl a tincidunt. Quisque et lacus quam, sed hendrerit mi. Mauris pretium, sapien et malesuada pulvinar, lorem leo viverra leo, et egestas mi nisl quis odio. Aliquam erat volutpat. Sed urna arcu, tempus eu vulputate adipiscing, consectetur et orci. Vivamus congue, nunc vitae fringilla convallis, libero massa lacinia lorem, id convallis mauris elit ut leo. Nulla vel odio sem. Duis lorem urna, congue vitae rutrum sed, tincidunt vel tortor. In hac habitasse platea dictumst. Nunc vitae enim ante, vitae facilisis massa. Etiam sagittis sapien at nibh fermentum consectetur convallis lacus blandit.</p>
+            					<p>the end.</p>
+            				</div>
+            			</div>
+            			<div class="dragger_container">
+            				<div class="dragger"></div>
+            			</div>
+            		</div>
+            </div>
+            <a href="#" class="close"></a>
+        </div>
+        <div class="porfolio hide_my">
+            <ul>
+	      {% for gallery in galleries %}
+	      <li><a href="{% url gallery gallery.id %}">{{ gallery.title }}</a></li>
+	      {% endfor %}
+            </ul>
+            <a href="#" class="close"></a>
+        </div>
+        <div class="contact hide_my">
+            <ul>
+                <li>Matthias Schlief</li>
+                <li>Matthias Schlief Photography</li>
+                <li>Max-Brauer-Allee 218</li>
+                <li>D-22769</li>
+                <li>Hamburg</li>
+                <li>Germany</li>
+            </ul>
+            <ul>
+                <li>Tel: 0049 (0) 40434149</li>
+                <li><a href="mailto:contact@studio-schlief.de">e-mail: contact@studio-schlief.de</a></li>
+            </ul>
+            <a href="#" class="close"></a>
+        </div>    
+  </div> <!--! end of #container -->
+</div>
+<script>
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/static/js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="/static/js/plugins.js"></script>
+  <script defer src="/static/js/script.js"></script>
+  <script defer src="/static/js/mylibs/jquery.bxSlider.min.js"></script>
+   <script src="/static/js/mediaelement-and-player.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="/static/js/jquery.mousewheel.min.js"></script>
+<script src="/static/js/jquery.mCustomScrollbar.js"></script>
+	
+  <!-- end scripts-->
+
+
+
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
