@@ -3,6 +3,15 @@ from portfolio.models import Gallery, Image, VideoFormat
 from portfolio.forms import AdminImageWidget, ImageinForm
 
 
+class VideoFormatAdmin(admin.ModelAdmin):
+    list_display = ('id', 'video_format', 'video_file', 'image', )
+
+
+class VideoFormatInline(admin.TabularInline):
+    model = VideoFormat
+    extra = 0
+
+
 class ImageAdmin(admin.ModelAdmin):
 
     def formfield_for_dbfield(self, db_field, **kwargs):
@@ -15,9 +24,7 @@ class ImageAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'gallery', 'context',
                     'is_video', 'image', )
 
-
-class VideoFormatAdmin(admin.ModelAdmin):
-    list_display = ('id', 'video_format', 'video_file', 'image', )
+    inlines = [VideoFormatInline]
 
 
 class ImageInline(admin.StackedInline):#.TabularInline):
@@ -30,9 +37,7 @@ class GalleryAdmin(admin.ModelAdmin):
 
     list_display = ('id', 'title', 'description', 'position', )
     list_editable = ('position', )
-    inlines = [
-        ImageInline,
-    ]
+    inlines = [ImageInline]
 
     class Media:
         js = (

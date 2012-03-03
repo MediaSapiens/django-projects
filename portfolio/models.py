@@ -54,10 +54,21 @@ class Image(models.Model):
 
 
 class VideoFormat(models.Model):
-    video_format = models.CharField(_('Video format'), default='720p',
-                              max_length=255, blank=True, null=True)
+    MP4 = 'video/mp4'
+    WEBM = 'video/webm'
+    OGG = 'video/ogg'
+    CHOICES = ((MP4, 'video/mp4'),
+               (WEBM, 'video/webm'),
+               (OGG, 'video/ogg'), )
+
+    video_format = models.CharField(_('Video format'), default=MP4,
+                                    max_length=255, choices=CHOICES,
+                                    blank=True, null=True)
     video_file = models.FileField(upload_to='videos', blank=True, null=True)
     image = models.ForeignKey(Image)
 
     def __unicode__(self):
         return 'Video Format #%d' % self.pk
+
+    class Meta:
+        unique_together = ('image', 'video_format', )

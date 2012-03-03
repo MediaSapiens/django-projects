@@ -3,3 +3,4 @@ South
 django-annoying
 MySQL-python
 PIL
+textile
