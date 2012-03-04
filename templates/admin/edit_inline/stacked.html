@@ -48,6 +48,25 @@
   {% if inline_admin_form.has_auto_field %}{{ inline_admin_form.pk_field.field }}{% endif %}
   {{ inline_admin_form.fk_field.field }}
 </div>{% endfor %}
+  <script type="text/javascript" src="/static/js/uploadify/jquery.uploadify.v2.1.4.min.js"></script>
+  <script type="text/javascript" src="/static/js/uploadify/swfobject.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $("#uploadify").uploadify({
+            'uploader'    : '/static/js/uploadify/uploadify.swf',
+            'script'     : {% url upload_file %},
+            'cancelImg'   : '/static/js/uploadify/cancel.png',
+            'queueID'    : 'fileQueue',
+            'auto'      : true,
+            'multi'     : true,
+            'fileDesc'   : 'jpg',
+            'fileExt'   : '*.jpg;*.jpeg;*.gif;*.png',
+            'onComplete'   : function(event,queueID,fileObj,response,data) {$('#response').append(response);}
+        });
+    $('#uploadify').uploadifyUpload();
+    });
+  </script>
+<a href="#" id="uploadify">Загрузить файлы.</a>
 </div>
 
 <script type="text/javascript">

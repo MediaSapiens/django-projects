@@ -13,6 +13,7 @@ urlpatterns = patterns('',
 
 urlpatterns += patterns('portfolio.views',
     url(r'^$', 'main', name='main'),
+    url(r'^upload/$', 'upload_file', name='upload_file'),
     url(r'^gallery/(?P<gallery_id>\d+)/$', 'gallery', name='gallery'),
 )
 
