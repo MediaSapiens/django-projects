@@ -1,4 +1,8 @@
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
 from annoying.decorators import render_to
+from django.shortcuts import redirect
+
 from portfolio.models import Gallery, Image
 
 
@@ -13,10 +17,6 @@ def gallery(request, gallery_id):
 
 def main(request):
     return gallery(request, 1)
-
-
-from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponse
 
 
 @csrf_exempt

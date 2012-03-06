@@ -32,22 +32,6 @@
         }
     }, 
     {
-        "pk": 4, 
-        "model": "flatpages.flatpage", 
-        "fields": {
-            "registration_required": false, 
-            "title": "backstage", 
-            "url": "/backstage/", 
-            "template_name": "", 
-            "sites": [
-                2, 
-                1
-            ], 
-            "content": "", 
-            "enable_comments": false
-        }
-    }, 
-    {
         "pk": 2, 
         "model": "flatpages.flatpage", 
         "fields": {
