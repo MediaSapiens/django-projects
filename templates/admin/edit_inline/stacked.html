@@ -49,14 +49,14 @@
   {{ inline_admin_form.fk_field.field }}
 </div>
   {% endfor %}
-  <script type="text/javascript" src="/static/js/uploadify/jquery.uploadify.v2.1.4.min.js"></script>
-  <script type="text/javascript" src="/static/js/uploadify/swfobject.js"></script>
+  <script type="text/javascript" src="/media/js/uploadify/jquery.uploadify.js"></script>
+  <script type="text/javascript" src="/media/js/uploadify/swfobject.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
         $("#uploadify").uploadify({
-            'uploader'    : '/static/js/uploadify/uploadify.swf',
+            'uploader'    : '/media/js/uploadify/uploadify.swf',
             'script'     : {% url upload_file %},
-            'cancelImg'   : '/static/js/uploadify/cancel.png',
+            'cancelImg'   : '/media/js/uploadify/cancel.png',
             'queueID'    : 'fileQueue',
             'auto'      : true,
             'multi'     : true,
