@@ -1,7 +1,6 @@
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from annoying.decorators import render_to
-from django.shortcuts import redirect
 
 from portfolio.models import Gallery, Image
 

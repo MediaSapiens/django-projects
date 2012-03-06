@@ -28,10 +28,11 @@
         <a class="logo" href="#"></a>        
              <span>This project name</span>
              <nav>
-                <a href="#" class="first" rel="porfolio">portfolio</a>
+                <a href="#" class="first jsaction" rel="porfolio">portfolio</a>
 		{% for page in flatpages %}
-                <a href="#" rel="{{ page.title }}">{{ page.title }}</a>
+                <a href="#" rel="{{ page.title }}" class="jsaction">{{ page.title }}</a>
 		{% endfor %}
+		<a href="{% url blog %}">backstage</a>
              </nav>
     </header>
     <div class="contwr">
@@ -104,11 +105,11 @@
   <script defer src="/static/js/plugins.js"></script>
   <script defer src="/static/js/script.js"></script>
   <script defer src="/static/js/mylibs/jquery.bxSlider.min.js"></script>
-   <script src="/static/js/mediaelement-and-player.min.js"></script>
-   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/static/js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="/static/js/jquery.mousewheel.min.js"></script>
-<script src="/static/js/jquery.mCustomScrollbar.js"></script>
+  <script src="/static/js/mediaelement-and-player.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.mousewheel.min.js"></script>
+  <script src="/static/js/jquery.mCustomScrollbar.js"></script>
 	
   <!-- end scripts-->
 

@@ -68,7 +68,7 @@ $(function(){
    
    });
     $('video,audio').mediaelementplayer();
-    $('nav a').click(function(){
+    $('nav a.jsaction').click(function(){
         $('.contwr .curent').animate({opacity:'0',left:'-1200'},'fast').removeClass('curent'); 
         var linkBlock = $(this).attr('rel');
         $('.'+linkBlock).css('left','20px').animate({opacity:'1'},'fast').addClass('curent'); 

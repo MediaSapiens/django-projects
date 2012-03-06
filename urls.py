@@ -20,6 +20,12 @@ urlpatterns += patterns('portfolio.views',
     url(r'^gallery/(?P<gallery_id>\d+)/$', 'gallery', name='gallery'),
 )
 
+urlpatterns += patterns('blog.views',
+    url(r'^blog/$', 'blog', name='blog'),
+    url(r'^full_news/(?P<article_slug>\w+)/$', 'full_news', name='full_news'),
+)
+
+
 if settings.DEBUG:
     urlpatterns += patterns('',
         (r'^media/(?P<path>.*)$', 'django.views.static.serve',
