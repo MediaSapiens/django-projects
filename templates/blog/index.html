@@ -1,3 +1,4 @@
+{% load markup %}
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="ru"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="ru"> <![endif]-->
@@ -27,7 +28,7 @@
                 <i>{{ article.short_description }}</i>
             </aside>
             <div class="news_data">
-	      <p>{{ article.text }}</p>
+	      <p>{{ article.text|textile }}</p>
                 <a href="{% url full_news article.slug %}" class="read_more">read more</a>
             </div>
         </article>      

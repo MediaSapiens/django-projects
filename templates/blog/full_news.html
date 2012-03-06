@@ -1,3 +1,4 @@
+{% load markup %}
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="ru"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="ru"> <![endif]-->
@@ -25,7 +26,7 @@
                 <i>{{ blog_post.short_description }}</i>
             </aside>
             <div class="news_data full">
-                <p>{{ blog_post.text }}</p>
+                <p>{{ blog_post.text|textile }}</p>
             </div>
         </article>
     </section>
