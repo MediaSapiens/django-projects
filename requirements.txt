@@ -4,3 +4,4 @@ django-annoying
 MySQL-python
 PIL
 textile
+django-tinymce
