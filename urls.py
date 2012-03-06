@@ -8,6 +8,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^uploadify/', include('uploadify.urls')),
+    url(r'^tinymce/filebrowser/', include('filebrowser.urls')),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^api/gallery/(?P<gallery_id>\d+)/$', 'api.views.gallery'),
 )

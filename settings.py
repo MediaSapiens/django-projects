@@ -132,10 +132,12 @@ INSTALLED_APPS = (
     'south',
     'annoying',
     'tinymce',
+    'filebrowser',
+    'uploadify',
 
     'api',
     'portfolio',
-
+    'blog',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -218,6 +220,9 @@ TINYMCE_DEFAULT_CONFIG={
         'bold': {'inline': 'strong'},
         'underline': {'inline': 'u'}},
     'pagebreak_separator': ""}
+
+#FILEBROWSER_URL_FILEBROWSER_MEDIA = STATIC_URL + 'filebrowser'
+FILEBROWSER_DIRECTORY = 'filebrowser'
 
 try:
     from local_settings import *
