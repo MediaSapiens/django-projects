@@ -22,7 +22,7 @@ urlpatterns += patterns('portfolio.views',
 
 urlpatterns += patterns('blog.views',
     url(r'^blog/$', 'blog', name='blog'),
-    url(r'^full_news/(?P<article_slug>\w+)/$', 'full_news', name='full_news'),
+    url(r'^full_news/(?P<article_slug>[\w-]+)/$', 'full_news', name='full_news'),
 )
 
 
