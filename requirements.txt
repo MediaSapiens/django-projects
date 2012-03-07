@@ -6,4 +6,4 @@ textile
 django-tinymce
 
 -e git+git://github.com/dorosh/django-filebrowser-no-grappelli-for-django13.git#egg=django-filebrowser
--e git+git://github.com/tstone/django-uploadify#egg=django-uploadify
+-e git+git://github.com/dorosh/django-uploadify.git#egg=django-uploadify
