@@ -37,6 +37,9 @@ class ImageInline(admin.StackedInline):#.TabularInline):
     extra = 0
     form = ImageinForm
 
+    class Media:
+        js = ('/static/js/collapsed_stacked_inline.js', )
+
 
 class GalleryAdmin(admin.ModelAdmin):
 
