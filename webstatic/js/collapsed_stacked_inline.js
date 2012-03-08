@@ -15,10 +15,12 @@ jQuery(function($) {
 	    if (fs.find('td.order input').val())
 	{
 	    fs.addClass('collapse collapsed');
+            h3.prepend('<a class="collapse-toggle" href="#">(' + gettext('Show') + ')</a> ');
 	}
-        
+        else
+            h3.prepend('<a class="collapse-toggle" href="#">(' + gettext('Hide') + ')</a> ');
+
         // Add toggle link
-        h3.prepend('<a class="collapse-toggle" href="#">(' + gettext('Show') + ')</a> ');
         h3.find('a.collapse-toggle').bind("click", function(){
             fs = $(this).parent('h3').next('fieldset');
             if (!fs.hasClass('collapsed'))
