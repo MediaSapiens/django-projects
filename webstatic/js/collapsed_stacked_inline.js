@@ -12,7 +12,10 @@ jQuery(function($) {
         if (fs.find('div').hasClass('errors'))
             fs.addClass('collapse');
         else
-            fs.addClass('collapse collapsed');
+	    if (fs.find('td.order input').val())
+	{
+	    fs.addClass('collapse collapsed');
+	}
         
         // Add toggle link
         h3.prepend('<a class="collapse-toggle" href="#">(' + gettext('Show') + ')</a> ');
