@@ -28,7 +28,7 @@
                 <i>{{ article.short_description }}</i>
             </aside>
             <div class="news_data">
-	      <p>{{ article.text|textile }}</p>
+	      <p>{{ article.text|textile|truncatewords_html:40 }}</p>
                 <a href="{% url full_news article.slug %}" class="read_more">read more</a>
             </div>
         </article>      
